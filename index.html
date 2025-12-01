@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TuitionFinder - Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* === GLOBAL === */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
+body{background:#f4f6fc;color:#333;}
+.container{width:90%;max-width:1180px;margin:auto;}
+h1,h2,h3{font-weight:700;}
+p{opacity:.9}
+
+/* === NAVBAR === */
+.navbar{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:15px 0;position:sticky;top:0;z-index:10;}
+.nav-container{display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:24px;font-weight:800;color:#2d63ff;}
+.nav-links a{text-decoration:none;margin-left:25px;color:#222;font-size:15px;font-weight:500;}
+.nav-links a.active{color:#2d63ff;font-weight:700;}
+.btn-primary{background:#2d63ff;color:#fff;padding:8px 18px;border-radius:6px;text-decoration:none}
+
+/* === HERO === */
+.hero{padding:70px 0;background:#e8edff;}
+.hero-content{display:flex;justify-content:space-between;align-items:center;}
+.hero-text{width:55%}
+.hero-text h1{font-size:42px;margin-bottom:10px;}
+.search-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.search-bar input{padding:12px;border:1px solid #ddd;border-radius:6px;}
+.search-bar button{background:#2d63ff;color:#fff;border:none;border-radius:6px;cursor:pointer;}
+.hero-card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.1);}
+
+/* === FOOTER === */
+.footer{background:#0b1b3f;color:#fff;padding:25px 0;margin-top:40px;text-align:center;}
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="container nav-container">
+    <div class="logo">TuitionFinder</div>
+    <nav class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a href="tutors.html">Find Tutors</a>
+      <a href="register-tutor.html">Become a Tutor</a>
+      <a href="login.html" class="btn-primary">Login</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="hero-text">
+      <h1>Find the Best Tutors Near You</h1>
+      <p>Search by subject, class or location.</p>
+
+      <form class="search-bar" action="tutors.html">
+        <input type="text" placeholder="Maths, Science...">
+        <input type="text" placeholder="8th, 10th">
+        <input type="text" placeholder="Location">
+        <button>Search</button>
+      </form>
+    </div>
+
+    <div class="hero-card">
+      <h3>Why Choose Us?</h3>
+      <p>✔ Verified Tutors</p>
+      <p>✔ Transparent Fees</p>
+      <p>✔ Batch Strength</p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  © 2025 TuitionFinder — All Rights Reserved
+</footer>
+
+</body>
+</html>
