@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - TuFinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="TuFinder Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">TuFinder</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="tutors.html">Find Tutors</a>
+        <a class="nav-link" href="dashboard.html">Dashboard</a>
+        <a class="nav-link" href="register-tutor.html">Become a Tutor</a>
+      </nav>
+
+      <div class="top-actions">
+        <a class="btn btn-ghost" href="tutors.html">Browse tutors</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Card -->
+  <main class="auth-wrap">
+    <section class="auth-shell">
+      <div class="auth-left" aria-hidden="true">
+        <div class="brand-badge">
+          <div class="brand-mark"></div>
+          <div class="brand-text">
+            <div class="brand-title">TuFinder</div>
+            <div class="brand-subtitle">Teach better. Learn faster.</div>
+          </div>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-dot"></div>
+            <div class="feature-text">
+              <div class="feature-title">Transparent fees</div>
+              <div class="feature-subtitle">Clear pricing & batch strength up front.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot"></div>
+            <div class="feature-text">
+              <div class="feature-title">Verified tutors</div>
+              <div class="feature-subtitle">Qualifications, experience & results.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot"></div>
+            <div class="feature-text">
+              <div class="feature-title">Fast inquiry</div>
+              <div class="feature-subtitle">Parents can contact in one click.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-card">
+        <header class="auth-header">
+          <h1>Welcome back</h1>
+          <p>Login as a student or tutor to continue.</p>
+        </header>
+
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="role">Role</label>
+            <div class="control">
+              <select id="role" name="role" autocomplete="organization-title" required>
+                <option value="student">Student</option>
+                <option value="tutor">Tutor</option>
+              </select>
+            </div>
+            <div class="hint" id="roleHint">Choose the account type.</div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <div class="control">
+              <input id="email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 7.5A3.5 3.5 0 0 1 7.5 4h9A3.5 3.5 0 0 1 20 7.5v9A3.5 3.5 0 0 1 16.5 20h-9A3.5 3.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="m6.5 8 4.9 3.7c.36.27.86.27 1.22 0L17.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="error" id="emailError" role="alert" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="control">
+              <input id="password" type="password" name="password" placeholder="Enter password" autocomplete="current-password" required minlength="6">
+              <button class="icon-btn" type="button" id="togglePassword" aria-label="Show password">
+                <svg id="eyeIcon" viewBox="0 0 24 24" fill="none">
+                  <path d="M2.5 12s3.5-7 9.5-7 9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </button>
+            </div>
+            <div class="row">
+              <label class="check">
+                <input type="checkbox" id="remember" name="remember">
+                <span>Remember me</span>
+              </label>
+              <a class="link" href="#" id="forgotLink">Forgot password?</a>
+            </div>
+            <div class="error" id="passwordError" role="alert" aria-live="polite"></div>
+          </div>
+
+          <button type="submit" class="btn-primary" id="loginBtn">
+            <span class="btn-text">Login</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <div class="auth-footer">
+          New tutor? <a class="link" href="register-tutor.html">Create an account</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  </main>
+
+  <footer class="footer">
+    © 2025 TuFinder. All rights reserved.
+  </footer>
+
+  <script src="login.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

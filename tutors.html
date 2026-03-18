@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Tutors - TuFinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tutors.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="TuFinder Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">TuFinder</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="tutors.html">Find Tutors</a>
+        <a class="nav-link" href="dashboard.html">Dashboard</a>
+        <a class="nav-link" href="register-tutor.html">Become a Tutor</a>
+      </nav>
+
+      <div class="top-actions">
+        <a class="btn btn-ghost" href="login.html">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <div>
+        <h1>Find Tutors</h1>
+        <p>Use filters to quickly shortlist the best match.</p>
+      </div>
+      <div class="stats" aria-hidden="true">
+        <div class="stat">
+          <div class="stat-num" id="totalTutors">0</div>
+          <div class="stat-label">Tutors</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="resultsCount">0</div>
+          <div class="stat-label">Matching</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout">
+      <aside class="panel" aria-label="Filters">
+        <div class="panel-head">
+          <div class="panel-title">Filters</div>
+          <button class="btn btn-ghost btn-sm" type="button" id="resetBtn">Reset</button>
+        </div>
+
+        <form id="filtersForm" class="filters" autocomplete="off">
+          <div class="field">
+            <label for="q">Search</label>
+            <div class="control">
+              <input id="q" name="q" type="text" placeholder="Name, qualification, area..." />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject</label>
+            <div class="control">
+              <select id="subject" name="subject">
+                <option value="">Any</option>
+                <option>Maths</option>
+                <option>Science</option>
+                <option>Physics</option>
+                <option>Chemistry</option>
+                <option>Biology</option>
+                <option>English</option>
+                <option>Computer</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="class">Class</label>
+            <div class="control">
+              <select id="class" name="class">
+                <option value="">Any</option>
+                <option>6th</option>
+                <option>7th</option>
+                <option>8th</option>
+                <option>9th</option>
+                <option>10th</option>
+                <option>11th</option>
+                <option>12th</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="location">Location</label>
+            <div class="control">
+              <input id="location" name="location" type="text" placeholder="City / Area" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="fees">Max fees (₹/month)</label>
+            <div class="control">
+              <input id="fees" name="fees" type="number" min="0" inputmode="numeric" placeholder="e.g. 5000" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="rating">Min rating</label>
+            <div class="control">
+              <select id="rating" name="rating">
+                <option value="0">Any</option>
+                <option value="3.5">3.5+</option>
+                <option value="4">4.0+</option>
+                <option value="4.5">4.5+</option>
+                <option value="4.8">4.8+</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Apply filters</button>
+          <div class="hint">Tip: filters apply live while typing.</div>
+        </form>
+      </aside>
+
+      <section class="results" aria-label="Tutor results">
+        <div class="results-head">
+          <div class="results-title">Recommended tutors</div>
+          <div class="pills">
+            <span class="pill" id="activeFilters">No filters</span>
+            <span class="pill pill-soft"><span id="resultsPillCount">0</span> results</span>
+          </div>
+        </div>
+
+        <div class="grid" id="cardsGrid" aria-live="polite"></div>
+
+        <div class="empty" id="emptyState" hidden>
+          <div class="empty-title">No tutors match your filters.</div>
+          <div class="empty-sub">Try increasing max fees or reducing min rating.</div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 TuFinder. All rights reserved.
+  </footer>
+
+  <script src="tutors.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

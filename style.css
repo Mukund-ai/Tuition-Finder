@@ -1,0 +1,492 @@
+/* -------------------------------------------------------------
+   GLOBAL STYLES
+------------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #f8f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1180px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+p {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* -------------------------------------------------------------
+   NAVBAR
+------------------------------------------------------------- */
+
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #2d63ff;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #222;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-links a.active {
+  color: #2d63ff;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: #2d63ff;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 6px;
+}
+
+.btn-primary:hover {
+  background: #264ccc;
+}
+
+/* -------------------------------------------------------------
+   HERO SECTION
+------------------------------------------------------------- */
+
+.hero {
+  padding: 80px 0;
+  background: #eef3ff;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  width: 55%;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 16px;
+}
+
+.search-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.search-bar input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.search-bar button {
+  background: #2d63ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.search-bar button:hover {
+  background: #224ed4;
+}
+
+.hero-illustration {
+  width: 40%;
+}
+
+.hero-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+/* -------------------------------------------------------------
+   STEPS / FEATURES SECTION
+------------------------------------------------------------- */
+
+.section {
+  padding: 70px 0;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+
+.step-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* -------------------------------------------------------------
+   TUTOR CARDS
+------------------------------------------------------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.tutor-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.tutor-card h3 {
+  margin-bottom: 8px;
+}
+
+.tutor-card .btn-outline {
+  margin-top: 12px;
+  display: inline-block;
+  border: 1px solid #2d63ff;
+  padding: 8px 16px;
+  color: #2d63ff;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.tutor-card .btn-outline:hover {
+  background: #2d63ff;
+  color: #fff;
+}
+
+/* -------------------------------------------------------------
+   CTA SECTION
+------------------------------------------------------------- */
+
+.cta-section {
+  background: #2d63ff;
+  color: #fff;
+  padding: 70px 0;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+}
+
+.cta-section .btn-primary {
+  background: #fff;
+  color: #2d63ff !important;
+  font-weight: 700;
+}
+
+/* -------------------------------------------------------------
+   FOOTER
+------------------------------------------------------------- */
+
+.footer {
+  background: #0b1b3f;
+  color: #fff;
+  padding: 25px 0;
+  margin-top: 30px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-links a {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------
+   TUTOR LIST PAGE
+------------------------------------------------------------- */
+
+.main-layout {
+  display: flex;
+  margin-top: 40px;
+}
+
+.filter-sidebar {
+  width: 25%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.filter-sidebar h2 {
+  margin-bottom: 15px;
+}
+
+.filter-sidebar label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.filter-sidebar input,
+.filter-sidebar select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 7px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.filter-sidebar button {
+  width: 100%;
+  background: #2d63ff;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.tutor-results {
+  width: 73%;
+  margin-left: 2%;
+}
+
+.tutor-results .tutor-card {
+  margin-bottom: 20px;
+}
+
+.badge {
+  background: #eef3ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #2d63ff;
+}
+
+/* -------------------------------------------------------------
+   TUTOR PROFILE PAGE
+------------------------------------------------------------- */
+
+.profile-layout {
+  display: flex;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.profile-main {
+  width: 70%;
+}
+
+.profile-main h1 {
+  font-size: 32px;
+}
+
+.profile-subtitle {
+  color: #2d63ff;
+  margin-bottom: 15px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.profile-section {
+  margin-top: 35px;
+}
+
+.batch-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.batch-table th,
+.batch-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.review-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+}
+
+.profile-sidebar {
+  width: 30%;
+}
+
+.sticky-card {
+  position: sticky;
+  top: 80px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.sticky-card input,
+.sticky-card textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 7px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* -------------------------------------------------------------
+   AUTH PAGES (LOGIN + REGISTER)
+------------------------------------------------------------- */
+
+.auth-container {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  background: #fff;
+  padding: 35px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.auth-card.large {
+  width: 700px;
+}
+
+.auth-card h1 {
+  margin-bottom: 8px;
+}
+
+.auth-card label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.auth-card input,
+.auth-card select,
+.auth-card textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #2d63ff;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* -------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text, .hero-illustration {
+    width: 100%;
+  }
+
+  .search-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .filter-sidebar, .tutor-results {
+    width: 100%;
+  }
+
+  .profile-layout {
+    flex-direction: column;
+  }
+
+  .profile-main, .profile-sidebar {
+    width: 100%;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

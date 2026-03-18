@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - TuFinder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="TuFinder Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">TuFinder</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="tutors.html">Find Tutors</a>
+        <a class="nav-link active" href="dashboard.html">Dashboard</a>
+      </nav>
+
+      <div class="profile">
+        <div class="profile-meta">
+          <div class="profile-name" id="profileName">Parent / Student</div>
+          <div class="profile-sub" id="profileSub">Searching for the best tutors</div>
+        </div>
+        <div class="profile-avatar" aria-hidden="true">U</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Find tutors that match your goals.</h1>
+        <p>Filter by subject, class, location, fees, and rating — then shortlist instantly.</p>
+      </div>
+      <div class="hero-right" aria-hidden="true">
+        <div class="stat">
+          <div class="stat-num" id="totalTutors">0</div>
+          <div class="stat-label">Tutors</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="resultsCount">0</div>
+          <div class="stat-label">Matching</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="avgRating">0.0</div>
+          <div class="stat-label">Avg rating</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-card" aria-label="Search and filter tutors">
+      <form id="filtersForm" class="filters" autocomplete="off">
+        <div class="field field-grow">
+          <label for="q">Search</label>
+          <div class="control control-search">
+            <input id="q" name="q" type="text" placeholder="Try “Maths”, “10th”, “Sector 62”, “Physics”" />
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M16.4 16.4 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <div class="control">
+            <select id="subject" name="subject">
+              <option value="">Any</option>
+              <option>Maths</option>
+              <option>Science</option>
+              <option>Physics</option>
+              <option>Chemistry</option>
+              <option>Biology</option>
+              <option>English</option>
+              <option>Computer</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="class">Class</label>
+          <div class="control">
+            <select id="class" name="class">
+              <option value="">Any</option>
+              <option>6th</option>
+              <option>7th</option>
+              <option>8th</option>
+              <option>9th</option>
+              <option>10th</option>
+              <option>11th</option>
+              <option>12th</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field field-grow">
+          <label for="location">Location</label>
+          <div class="control">
+            <input id="location" name="location" type="text" placeholder="City / Area" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fees">Max fees (₹/month)</label>
+          <div class="control">
+            <input id="fees" name="fees" type="number" inputmode="numeric" min="0" placeholder="e.g. 5000" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="rating">Min rating</label>
+          <div class="control">
+            <select id="rating" name="rating">
+              <option value="0">Any</option>
+              <option value="3.5">3.5+</option>
+              <option value="4">4.0+</option>
+              <option value="4.5">4.5+</option>
+              <option value="4.8">4.8+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">
+            <span>Apply</span>
+          </button>
+          <button type="button" class="btn btn-ghost" id="resetBtn">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="map-card" aria-label="Map and nearby tutors">
+      <div class="map-head">
+        <div>
+          <div class="map-title">Nearby tutors on map</div>
+          <div class="map-sub">Allow location to see tutors within <strong>5 km</strong>.</div>
+        </div>
+        <div class="map-actions">
+          <button class="btn btn-ghost" type="button" id="locateBtn">Use my location</button>
+          <label class="toggle">
+            <input type="checkbox" id="within5km" checked>
+            <span>Only within 5 km</span>
+          </label>
+        </div>
+      </div>
+      <div class="map" id="map"></div>
+      <div class="map-hint" id="mapHint">Tip: if location is blocked, enable it in browser settings and refresh.</div>
+    </section>
+
+    <section class="results">
+      <div class="results-head">
+        <h2>Recommended tutors</h2>
+        <div class="results-meta">
+          <span class="pill" id="activeFilters">No filters</span>
+          <span class="pill pill-soft"><span id="resultsPillCount">0</span> results</span>
+        </div>
+      </div>
+
+      <div class="grid" id="cardsGrid" aria-live="polite"></div>
+
+      <div class="empty" id="emptyState" hidden>
+        <div class="empty-title">No tutors match your filters.</div>
+        <div class="empty-sub">Try reducing the rating or increasing max fees.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 TuFinder. All rights reserved.
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="dashboard.js" defer></script>
+</body>
+</html>
+

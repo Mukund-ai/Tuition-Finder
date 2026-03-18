@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TuFinder - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="TuFinder Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">TuFinder</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="tutors.html">Find Tutors</a>
+        <a class="nav-link" href="dashboard.html">Dashboard</a>
+        <a class="nav-link" href="register-tutor.html">Become a Tutor</a>
+      </nav>
+
+      <div class="top-actions">
+        <a class="btn btn-ghost" href="login.html">Login</a>
+        <a class="btn btn-primary" href="tutors.html">Browse tutors</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kicker">Trusted tuition discovery</div>
+        <h1>Find a tutor that fits your budget, schedule, and goals.</h1>
+        <p>
+          Search verified tutors by subject, class and location — with clear fees, ratings, and qualifications.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="dashboard.html">Open dashboard</a>
+          <a class="btn btn-ghost" href="register-tutor.html">Become a tutor</a>
+        </div>
+
+        <div class="trust-row" aria-hidden="true">
+          <div class="trust-pill">✔ Verified profiles</div>
+          <div class="trust-pill">✔ Transparent fees</div>
+          <div class="trust-pill">✔ Batch strength</div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <section class="search-card" aria-label="Quick tutor search">
+          <div class="search-head">
+            <div>
+              <div class="search-title">Quick search</div>
+              <div class="search-sub">Start here and refine filters on the dashboard.</div>
+            </div>
+            <span class="chip" aria-hidden="true">New</span>
+          </div>
+
+          <form class="search-grid" action="tutors.html">
+            <div class="field">
+              <label for="subject">Subject</label>
+              <div class="control">
+                <input id="subject" name="subject" type="text" placeholder="Maths, Science..." />
+              </div>
+            </div>
+            <div class="field">
+              <label for="class">Class</label>
+              <div class="control">
+                <input id="class" name="class" type="text" placeholder="8th, 10th" />
+              </div>
+            </div>
+            <div class="field field-wide">
+              <label for="location">Location</label>
+              <div class="control">
+                <input id="location" name="location" type="text" placeholder="City / Area" />
+              </div>
+            </div>
+            <button class="btn btn-primary field-wide" type="submit">Search tutors</button>
+          </form>
+
+          <div class="mini-cards" aria-hidden="true">
+            <div class="mini">
+              <div class="mini-k">Popular</div>
+              <div class="mini-v">Maths • Science</div>
+            </div>
+            <div class="mini">
+              <div class="mini-k">Top rated</div>
+              <div class="mini-v">4.5+ tutors</div>
+            </div>
+            <div class="mini">
+              <div class="mini-k">Flexible</div>
+              <div class="mini-v">Home / Online</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Everything parents want to know</h2>
+        <p>Clear information before you commit — fees, experience, qualifications, and more.</p>
+      </div>
+
+      <div class="cards">
+        <article class="info-card">
+          <div class="icon" aria-hidden="true">₹</div>
+          <h3>Transparent fees</h3>
+          <p>Know monthly fees up front and compare tutors confidently.</p>
+        </article>
+        <article class="info-card">
+          <div class="icon" aria-hidden="true">★</div>
+          <h3>Ratings & results</h3>
+          <p>Shortlist high-performing tutors using reviews and outcomes.</p>
+        </article>
+        <article class="info-card">
+          <div class="icon" aria-hidden="true">🎓</div>
+          <h3>Qualification</h3>
+          <p>See education, subject expertise, and teaching style clearly.</p>
+        </article>
+        <article class="info-card">
+          <div class="icon" aria-hidden="true">👥</div>
+          <h3>Batch strength</h3>
+          <p>Choose 1:1 or small batches based on your preference.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-card">
+        <div class="cta-left">
+          <h2>Want a premium filtering experience?</h2>
+          <p>Use the dashboard to filter by subject, class, location, max fees and rating — live.</p>
+        </div>
+        <div class="cta-right">
+          <a class="btn btn-primary" href="dashboard.html">Go to dashboard</a>
+          <a class="btn btn-ghost" href="tutors.html">View tutors</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 TuFinder — All Rights Reserved
+  </footer>
+
+  <script src="main.js" defer></script>
+
+</body>
+</html>
+

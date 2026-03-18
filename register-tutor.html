@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register as Tutor - TuFinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,-apple-system,sans-serif;}
+    body{background:#f4f6fc;color:#333;}
+
+    .container{width:90%;max-width:1180px;margin:auto;}
+
+    /* Navbar */
+    .navbar{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:15px 0;}
+    .nav-container{display:flex;justify-content:space-between;align-items:center;}
+    .logo{font-size:24px;font-weight:800;color:#2d63ff;}
+    .nav-links a{text-decoration:none;margin-left:25px;color:#222;font-weight:500;font-size:15px;}
+    .nav-links a.active{color:#2d63ff;font-weight:700;}
+    .btn-primary-link{background:#2d63ff;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;}
+
+    /* Auth Card (Large Form) */
+    .auth-container{display:flex;justify-content:center;margin-top:60px;margin-bottom:40px;}
+    .auth-card{background:#fff;padding:35px;width:720px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.12);}
+    .auth-card h1{margin-bottom:8px;}
+    .auth-card p{margin-bottom:22px;font-size:14px;opacity:.85;}
+
+    .grid-form{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+    .grid-form label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;}
+    .grid-form input,
+    .grid-form textarea{width:100%;padding:10px;border-radius:6px;border:1px solid #ccc;margin-top:4px;}
+
+    .full-width{grid-column:1 / -1;}
+
+    .btn-primary{width:100%;background:#2d63ff;color:#fff;border:none;padding:11px;border-radius:6px;font-weight:600;cursor:pointer;margin-top:5px;}
+    .btn-primary:hover{background:#224ed4;}
+
+    /* Footer */
+    .footer{background:#0b1b3f;color:#fff;text-align:center;padding:18px 0;font-size:13px;}
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">TuFinder</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tutors.html">Find Tutors</a>
+        <a href="register-tutor.html" class="active">Become a Tutor</a>
+        <a href="login.html" class="btn-primary-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Register Tutor Card -->
+  <main class="auth-container">
+    <div class="auth-card">
+      <h1>Register as a Tutor</h1>
+      <p>Create your tutor profile and start getting students from your area.</p>
+
+      <form class="grid-form">
+        <label>
+          Full Name
+          <input type="text" name="name" placeholder="Rahul Sharma" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" placeholder="rahul@example.com" required>
+        </label>
+
+        <label>
+          Phone Number
+          <input type="tel" name="phone" placeholder="9876543210" required>
+        </label>
+
+        <label>
+          Qualification
+          <input type="text" name="qualification" placeholder="B.Sc Maths, M.Sc Physics..." required>
+        </label>
+
+        <label>
+          Years of Experience
+          <input type="number" name="experience" min="0" placeholder="5" required>
+        </label>
+
+        <label>
+          Subjects You Teach
+          <input type="text" name="subjects" placeholder="Maths, Science, English..." required>
+        </label>
+
+        <label>
+          Classes You Handle
+          <input type="text" name="classes" placeholder="Class 6–8, 9–10, 11–12" required>
+        </label>
+
+        <label>
+          Area / Location
+          <input type="text" name="location" placeholder="Sector 15, Gurugram" required>
+        </label>
+
+        <label>
+          Monthly Fees (per student)
+          <input type="number" name="fees" placeholder="1500" required>
+        </label>
+
+        <label>
+          Max Batch Strength
+          <input type="number" name="batch_strength" placeholder="12" required>
+        </label>
+
+        <label class="full-width">
+          Short Bio
+          <textarea name="bio" rows="3" placeholder="Explain your teaching style, results, achievements..."></textarea>
+        </label>
+
+        <label class="full-width">
+          Password
+          <input type="password" name="password" placeholder="Create a password" required>
+        </label>
+
+        <button type="submit" class="btn-primary full-width">Create Tutor Profile</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    © 2025 TuFinder. All rights reserved.
+  </footer>
+
+</body>
+</html>
+<script src="main.js"></script>
+<form onsubmit="registerTutor(); return false;">
+<input id="name">
+<input id="email">
+<input id="phone">
+<input id="subjects">
+<input id="experience">
+<input id="fees">
+<input id="location">
+<textarea id="bio"></textarea>

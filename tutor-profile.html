@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tutor Profile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{font-family:Inter;background:#f4f6fc;}
+.container{width:90%;margin:auto;max-width:1180px;}
+.navbar{background:#fff;padding:15px 0;box-shadow:0 2px 10px rgba(0,0,0,.1);}
+.profile-layout{display:flex;margin-top:40px;gap:20px;}
+.profile-main{width:70%;background:#fff;padding:25px;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.1);}
+.profile-sidebar{width:30%;}
+.sticky-card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.1);}
+.sticky-card input,.sticky-card textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;margin-bottom:10px;}
+.btn-primary{background:#2d63ff;padding:10px 20px;color:#fff;border-radius:6px;}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="container nav-container">
+<div class="logo">TuFinder</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tutors.html">Find Tutors</a>
+      <a href="register-tutor.html">Become a Tutor</a>
+      <a href="login.html" class="btn-primary">Login</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container profile-layout">
+
+  <div class="profile-main">
+    <h1>Rahul Sharma</h1>
+    <p>Maths Expert • 5 years</p>
+    <p><strong>Fees:</strong> ₹1500</p>
+  </div>
+
+  <div class="profile-sidebar">
+    <div class="sticky-card">
+      <h3>Contact Tutor</h3>
+      <input placeholder="Name">
+      <input placeholder="Phone">
+      <textarea placeholder="Message"></textarea>
+      <button class="btn-primary">Send</button>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
+<script src="main.js"></script>
+<div id="tutor-list"></div>
+
+<script>
+  loadTutors();
+</script>
+<h1 id="name"></h1>
+<p id="subjects"></p>
+<p id="experience"></p>
+<p id="location"></p>
+<p id="fees"></p>
+<p id="bio"></p>
+
+<script>
+  loadTutorProfile();
+</script>
+
